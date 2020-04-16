@@ -4,13 +4,13 @@ import numpy as np
 class Dataset(object):
     def __init__(self, path):
         self.trainMatrix = self.load_rating_file_as_matrix(path + "train.rating")
-        self.testRatings = self.load_rating_file_as_list(path + "test.rating")
+        self.testRatings = self.load_test_file_as_list(path + "test.rating")
         self.testNegatives = self.load_negative_file(path + "test.negative")
         print(len(self.testRatings),len(self.testNegatives))
         assert len(self.testRatings) == len(self.testNegatives)
         self.num_users, self.num_items = self.trainMatrix.shape
 
-    def load_rating_file_as_list(self, filename):
+    def load_test_file_as_list(self, filename):
         ratingList = []
         with open(filename, "r") as f:
             line = f.readline()

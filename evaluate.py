@@ -49,7 +49,7 @@ def eval_one_rating(idx):
     map_item_score = {}             # Get prediction scores
     users = np.full(len(items),u,dtype = 'int32')
     predictions = _model.predict([users, np.array(items)],batch_size = 100, verbose = 0)
-
+    print(predictions)
     for i in range(len(items)):
         item = items[i]
         map_item_score[item] = predictions[i]
