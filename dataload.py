@@ -21,7 +21,8 @@ def load(para):
         testfile = open('data/test.rating', 'a+')
         negativefile = open('data/test.negative', 'a+')
 
-        for userid in range(numuser):
+#        for userid in range(numuser):
+        for userid in range(0,10):
             # 当前userid对所有item的rating
             itemlist = np.arange(0,len(dataMatrix[userid])) #按次序生成itemlist的编号0,1，....,共5825个
             userlist = np.full(len(dataMatrix[userid]), userid, dtype = 'int32')#长度为5825
