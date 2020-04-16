@@ -58,6 +58,12 @@ def load(para):
                 negativefile.write(str(negativelist[i][1]) + '\t')
             negativefile.write('\n')
 
+            #生成训练数据文件
+            for i in range(len(trainlist)):
+                item = trainlist[i][1]
+                rating = trainlist[i][0]
+                trainfile.write(str(userid) + '\t' + str(item) + '\t' +str(rating) + '\t' +'\n')
+
         trainfile.close()
         testfile.close()
         negativefile.close()
